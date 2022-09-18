@@ -16,6 +16,7 @@ app.get("/todos", async (req, res) => {
         const todos = await pool.query(
             "SELECT * FROM todos"
         )
+        console.log('hola');
         res.json(todos.rows);
     } catch (error) {
         console.error(error.message);
