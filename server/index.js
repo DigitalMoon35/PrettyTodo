@@ -54,6 +54,8 @@ app.put("/todos/:id", async (req, res) => {
     try {
         const {id} = req.params;
         const {description} = req.body;
+        console.log(req.body)
+        console.log(req.params)
         const updatedTodo = await pool.query(
             "UPDATE todos SET description = $1 WHERE id = $2", [description, id]
         )

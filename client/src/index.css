@@ -17,9 +17,11 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 h1 {
+  color: white;
   font-size: 54px;
   font-weight: 600;
   margin-bottom: 52px;
@@ -28,9 +30,11 @@ h1 {
   text-align: center;
 }
 
-h1 + div  {
+.container > div  {
   display: flex;
+  justify-content: center;
   gap: 10px;
+  margin-bottom: 40px;
 }
 
 header {
@@ -38,7 +42,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .input {
@@ -62,9 +66,50 @@ header {
   border: none;
 }
 
+.btn:link,
+.btn:visited {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius:9px;
+  font-family: 'Karla';
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 .container {
   margin: 0 auto;
   width: 1200px;
+  /* height: 800px; */
+}
+
+.containter .overlay {
+  
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  border: 2px solid white;
+  height: 700px;
+  width: 1200px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+  background-size: cover;
+}
+
+.modal > div {
+  display: flex;
+  gap: 10px;
 }
 
 /* 
@@ -72,12 +117,16 @@ header {
   grid-column: 
 } */
 
+h2 {
+  font-size: 44px;
+  font-weight: 700;
+}
 
 
 .item-box {
   display: grid;
   grid-template-columns: 2fr 100px 100px;
-  padding: 10px 20px;
+  padding: 16px 32px;
   border: 2px solid white;
   color: white;
   border-radius: 9px;
@@ -89,7 +138,6 @@ header {
 li {
   font-size: 28px;
   list-style: none;
-
 }
 
 .edit-button {
